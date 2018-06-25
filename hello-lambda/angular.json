@@ -3,6 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "lambda-handler": {
+      "root": "",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/lambda-handler",
+            "main": "src/main.handler.ts",
+            "tsConfig": "src/tsconfig.handler.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
     "hello-lambda": {
       "root": "",
       "sourceRoot": "src",
