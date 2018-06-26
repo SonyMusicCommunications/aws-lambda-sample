@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "handler": "npm run ng -- build lambda-handler",
+    "index": "npm run ng -- build --aot",
+    "lambda": "npm run ng -- build lambda",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

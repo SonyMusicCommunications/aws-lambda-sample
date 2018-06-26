@@ -3,14 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lambda-handler": {
+    "lambda": {
       "root": "",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/lambda-handler",
+            "outputPath": "dist/lambda",
             "main": "src/main.handler.ts",
             "tsConfig": "src/tsconfig.handler.json"
           },
@@ -25,10 +25,8 @@
               "optimization": true,
               "outputHashing": "none",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "vendorChunk": false
             }
           }
         }

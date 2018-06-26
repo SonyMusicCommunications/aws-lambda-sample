@@ -3,10 +3,13 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "es2015",
-    "types": []
+    "types": ["node"]
   },
+  "files": [
+    "polyfills.ts",
+    "main.ts"
+  ],
   "exclude": [
-    "src/main.handler.ts",
     "src/test.ts",
     "**/*.spec.ts"
   ]

@@ -5,8 +5,10 @@
     "module": "es2015",
     "types": ["node"]
   },
+  "files": [
+    "main.handler.ts"
+  ],
   "exclude": [
-    "src/main.ts",
     "src/test.ts",
     "**/*.spec.ts"
   ]
