@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "_pre": "npm run sass -- --output-style compressed && npm run pug",
+    "_aot": "npm run sass -- --output-style expanded && npm run pug -- -P",
     "pug": "pug src --doctype html",
     "sass": "node-sass src -o src",
-    "index": "npm run ng -- build --aot",
+    "index": "npm run _aot && npm run ng -- build --aot",
     "lambda": "npm run ng -- build lambda",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run _pre && npm run ng -- build --prod && npm run ng -- build lambda --prod",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --format stylish",
     "e2e": "ng e2e"
   },
   "devDependencies": {
