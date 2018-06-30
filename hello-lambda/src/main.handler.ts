@@ -1,8 +1,18 @@
-console.log('Loading function');
+import { LambdaHandlerEvent, LambdaHandlerContext } from "./app/shared/lambda/lambda-handler";
+import { ApiGateWayResponse } from "./app/shared/api-gateway/api-gateway-response";
 
-exports.handler = async (event, context) => {
-  console.log('value1 =', event.key1);
-  console.log('value2 =', event.key2);
-  console.log('value3 =', event.key3);
-  return event.key1;
+
+exports.handler = async (event: LambdaHandlerEvent, context: LambdaHandlerContext, callback: any = Function.prototype): Promise<void> =>
+{
+  const responseBody = Object.assign({}, event);
+  Object.assign(responseBody, context);
+
+  const response: ApiGateWayResponse = {
+    statusCode: 200,
+    headers: {'Context-Type': 'application/json'},
+    body: JSON.stringify(responseBody),
+    isBase64Encoded: false,
+  };
+
+  callback(null, response);
 }
