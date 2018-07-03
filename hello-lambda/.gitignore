@@ -41,3 +41,4 @@ Thumbs.db
 # additional
 *.html
 *.css
+package-lock.json
