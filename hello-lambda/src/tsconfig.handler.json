@@ -6,7 +6,8 @@
     "types": ["node"]
   },
   "files": [
-    "main.handler.ts"
+    "func/hello-dynamo.handler.ts",
+    "func/hello-lambda.handler.ts"
   ],
   "exclude": [
     "src/test.ts",

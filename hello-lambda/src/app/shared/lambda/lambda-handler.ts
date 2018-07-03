@@ -54,4 +54,18 @@ export interface LambdaHandlerContext
   logGroupName: string;
   logStreamName: string;
   memoryLimitInMB: number;
+  fail(err: any): any;
+  /*
+    function (err) {
+      checkExpectedArgRange('fail', arguments, 0, 1);
+      context.done(isUndefinedOrNull(err) ? '__emptyFailParamBackCompat' : err, null);
+    }
+  */
+  done(err: any, data: any): any;
+  /*
+    function (err, data) {
+      waitToFinish = false;
+      callback(err, data);
+    }
+  */
 }
