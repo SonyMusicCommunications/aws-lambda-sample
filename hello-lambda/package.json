@@ -8,10 +8,10 @@
     "pug": "pug src --doctype html",
     "sass": "node-sass src -o src",
     "index": "npm run _aot && npm run ng -- build --aot",
-    "lambda": "npm run ng -- build lambda",
+    "lambda": "npm run ng -- build hello-dynamo && npm run ng -- build hello-lambda",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run _pre && npm run ng -- build --prod && npm run ng -- build lambda --prod",
+    "build": "npm run _pre && npm run ng -- build --prod && npm run ng -- build hello-dynamo --prod && npm run ng -- build hello-lambda --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
